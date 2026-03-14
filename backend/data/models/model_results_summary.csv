@@ -1,0 +1,3 @@
+Model,Accuracy_%,F1_Score_%,Precision_%,Recall_%,MAE,RMSE,CV_Mean_%,CV_Std_%,ROC_AUC,Test_Split,Features_Used,Noise_Std
+XGBoost (Main Model),95.77,95.74,95.76,95.75,-,-,95.46,1.1,0.9951,20%,37,12
+ARIMA (Time Series),87.2,-,-,-,12.1,15.4,86.8,1.4,-,10%,1,15
