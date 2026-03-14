@@ -25,11 +25,15 @@ async def seed_database():
     # Exact 27 unique cities found in dbscan_hotspot_clusters.csv
     # 1. Ahmedabad, 2. Alappuzha, 3. Bengaluru, 4. Chennai, 5. Delhi, 6. Ernakulam, 7. Hyderabad, 8. Idukki, 9. Indore, 10. Jaipur, 11. Kannur, 12. Kasaragod, 13. Kochi, 14. Kolkata, 15. Kollam, 16. Kozhikode, 17. Malappuram, 18. Mumbai, 19. Palakkad, 20. Panaji, 21. Pathanamthitta, 22. Prayagraj, 23. Pune, 24. Shimla, 25. Thiruvananthapuram, 26. Thrissur, 27. Wayanad.
 
+    # Load default passwords from environment or use fallback
+    ADMIN_PWD = os.getenv("DEFAULT_ADMIN_PASSWORD", "admin123")
+    OFFICER_PWD = os.getenv("DEFAULT_OFFICER_PASSWORD", "officer123")
+
     test_users = [
         {
             "email": "admin@civic.gov",
             "username": "admin",
-            "password": "admin123",
+            "password": ADMIN_PWD,
             "full_name": "System Administrator",
             "role": "admin",
             "assigned_zones": [],
@@ -40,7 +44,7 @@ async def seed_database():
         {
             "email": "off_north@civicrisk.gov",
             "username": "off_north",
-            "password": "officer123",
+            "password": OFFICER_PWD,
             "full_name": "Rajesh Kumar",
             "role": "officer",
             "assigned_zones": ["Delhi", "Shimla", "Jaipur", "Prayagraj"],
@@ -49,7 +53,7 @@ async def seed_database():
         {
             "email": "off_south_west@civicrisk.gov",
             "username": "off_south_west",
-            "password": "officer123",
+            "password": OFFICER_PWD,
             "full_name": "Arjun Nair",
             "role": "officer",
             "assigned_zones": [
@@ -62,7 +66,7 @@ async def seed_database():
         {
             "email": "off_south_east@civicrisk.gov",
             "username": "off_south_east",
-            "password": "officer123",
+            "password": OFFICER_PWD,
             "full_name": "Karthik S.",
             "role": "officer",
             "assigned_zones": ["Bengaluru", "Chennai", "Hyderabad"],
@@ -71,7 +75,7 @@ async def seed_database():
         {
             "email": "off_west@civicrisk.gov",
             "username": "off_west",
-            "password": "officer123",
+            "password": OFFICER_PWD,
             "full_name": "Vikram Shah",
             "role": "officer",
             "assigned_zones": ["Ahmedabad", "Indore", "Mumbai", "Panaji", "Pune"],
@@ -80,7 +84,7 @@ async def seed_database():
         {
             "email": "off_east@civicrisk.gov",
             "username": "off_east",
-            "password": "officer123",
+            "password": OFFICER_PWD,
             "full_name": "Ananya Bose",
             "role": "officer",
             "assigned_zones": ["Kolkata"],
